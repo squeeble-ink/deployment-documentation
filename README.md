@@ -130,10 +130,10 @@ We currently have 2 default workflows copy them to the `/.github/workflows` dire
               passphrase: ${{ secrets.GHA_PW }}
               script: |
                 eval `ssh-agent -s`
-                cd ./_server/deployment-test/prd/
-                rm -rf ./deployment-test
+                cd ./_server/${{ vars.REPO_NAME }}/prd/
+                rm -rf ./${{ vars.REPO_NAME }}
                 ssh-add ~/.ssh/${{ secrets.REPO_SSH_NAME }}
-                git clone git@github.com:squeeble-ink/deployment-test.git
+                git clone git@github.com:squeeble-ink/${{ vars.REPO_NAME }}.git
                 cd ./deployment-test
                 rm ./nginx/dev.conf
                 docker compose up prd -d --build
@@ -161,10 +161,10 @@ We currently have 2 default workflows copy them to the `/.github/workflows` dire
               passphrase: ${{ secrets.GHA_PW }}
               script: |
                 eval `ssh-agent -s`
-                cd ./_server/deployment-test/dev/
-                rm -rf ./deployment-test
+                cd ./_server/${{ vars.REPO_NAME }}/dev/
+                rm -rf ./${{ vars.REPO_NAME }}
                 ssh-add ~/.ssh/${{ secrets.REPO_SSH_NAME }}
-                git clone git@github.com:squeeble-ink/deployment-test.git
+                git clone git@github.com:squeeble-ink/${{ vars.REPO_NAME }}.git
                 cd ./deployment-test
                 git checkout develop
                 rm ./nginx/prd.conf
