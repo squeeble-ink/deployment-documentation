@@ -134,7 +134,7 @@ We currently have 2 default workflows copy them to the `/.github/workflows` dire
                 rm -rf ./${{ vars.REPO_NAME }}
                 ssh-add ~/.ssh/${{ secrets.REPO_SSH_NAME }}
                 git clone git@github.com:squeeble-ink/${{ vars.REPO_NAME }}.git
-                cd ./deployment-test
+                cd ./${{ vars.REPO_NAME }}
                 rm ./nginx/dev.conf
                 docker compose up prd -d --build
     ```
@@ -165,7 +165,7 @@ We currently have 2 default workflows copy them to the `/.github/workflows` dire
                 rm -rf ./${{ vars.REPO_NAME }}
                 ssh-add ~/.ssh/${{ secrets.REPO_SSH_NAME }}
                 git clone git@github.com:squeeble-ink/${{ vars.REPO_NAME }}.git
-                cd ./deployment-test
+                cd ./${{ vars.REPO_NAME }}
                 git checkout develop
                 rm ./nginx/prd.conf
                 docker compose up dev -d --build
