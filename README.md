@@ -9,8 +9,8 @@ We think transparency is importent since Squeeble is a privacy first company.
 Setting up your deploy key so the workflows can clone the repository.
 Do this per server instance so when one server is compromised we can delete the deployment key linked to that server.  
 This required for the following types of repositories:
--  Private with `write` and/or `read` access
--  Public with `write` access
+-  Private with `read` and/or `write` access
+-  Public with `read` access
 
 Base documentation comes from [GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#set-up-deploy-keys)
 
